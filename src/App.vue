@@ -24,6 +24,9 @@ export default {
       
     }
   },
+  mounted:function() {
+    this.$store.dispatch('initData');
+  },
   components:{
     card,
     list,

@@ -50,11 +50,31 @@ const store = new Vuex.Store({
 				date: new Date(),
 				self:true
 			})
-		}
+		},
+    INIT_DATA (state) {
+      let data = localStorage.getItem('vue-chat-session');
+      //console.log(data)
+      if (data) {
+        state.sessions = JSON.parse(data);
+      }
+    }
 	},
 	actions:{
-
+    initData (context) {
+      context.commit('INIT_DATA')
+    }
 	}
 })
+
+
+store.watch(function (state) {
+  return state.sessions
+},function (val) {
+  console.log('CHANGE: ', val);
+  localStorage.setItem('vue-chat-session', JSON.stringify(val));
+},{
+  deep:true/*这个貌似是开启watch监测的判断,官方说明也比较模糊*/
+})
+
 
 export default store;

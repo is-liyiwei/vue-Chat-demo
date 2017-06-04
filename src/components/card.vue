@@ -5,7 +5,7 @@
   		<p class="name">{{user.name}}</p>
   	</header>
   	<footer>
-  		<input class="search" type="text" placeholder="search user...">
+  		<input class="search" type="text" v-model="$store.state.filterKey" placeholder="search user...">
   	</footer>
   </div>
 </template>
@@ -46,6 +46,7 @@ export default {
   	border: 1px solid #3a3a3a;
   	border-radius: 4px;
   	outline: none;/*鼠标点击后不会出现蓝色边框*/
+    color: #FFF;
   }
 }
 </style>

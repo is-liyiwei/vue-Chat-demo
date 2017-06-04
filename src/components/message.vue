@@ -30,17 +30,21 @@ export default {
   ]),
   filters:{
   	time (date) {
+      if (date) {
+        date = new Date(date);
+      }
   		return `${date.getHours()}:${date.getMinutes()}`;
   	}
   },
-  directives: {
-        // 发送消息后滚动到底部
-        'scroll-bottom' (el) {
-          console.log(el.scrollTop)
-          el.scrollTop+=9999;
-          console.log(el.scrollTop)
-        }
+  directives: {/*这个是vue的自定义指令,官方文档有详细说明*/
+    // 发送消息后滚动到底部,这里无法使用原作者的方法，也未找到合理的方法解决，暂用setTimeout的方法模拟
+    'scroll-bottom' (el) {
+      //console.log(el.scrollTop);
+      setTimeout(function () {
+        el.scrollTop+=9999;
+      },1)
     }
+  }
 }
 </script>
 
