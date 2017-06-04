@@ -15,14 +15,11 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-
-
+``` bash
 一个基于Vue + Webpack构建的简单chat示例，聊天记录保存在localStorge。简单演示了Vue的component、filter、directive、computed以及组件间的事件通讯。
+```
 
-
-原作者项目地址
+## 原作者项目地址
 
 https://github.com/Coffcer/vue-chat
 
